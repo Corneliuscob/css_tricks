@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Glide Js </title>
+    
+    <link rel="stylesheet" href="glide-3.3.0/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" href="glide-3.3.0/dist/css/glide.core.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.10.0/math.js"></script>
+
+</head>
+
+<body>
+    <center>
+    <h1>Testing Glide</h1>
+    Look at this carousel!
+    <!-- <div style ="padding: 1.5em;"> -->
+        <!-- <div class="example__frame"> -->
+            <div>
+        <div class="glide" style="float:right;">
+            <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide"><img id = "r1" class = "test" src="img/t1.png"></li>
+                <li class="glide__slide"><img id = "r2" class = "test"  src="img/t2.png"></li>
+                <li class="glide__slide"><img id = "r3" class = "test"  src="img/t3.png"></li>
+                <li class="glide__slide"><img id = "r4" class = "test"  src="img/t4.png"></li>
+            </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls" style="width:400px;" >
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<" style= " position:relative; float:right;">prev</button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">" style= "position:relative; float:left;">next</button>
+                  </div>
+        </div>
+    </div>
+
+
+</center>    
+
+
+    <script >
+    const arr = ["#r1","#r2","#r3","#r4"];
+    var ranNums = [1,2,3,4,5,6];
+    for ( i= 0 ;i<2 ; i ++ ){
+        var index = getRandomInt(ranNums.length);
+        ranNums.splice(index,1);
+    }
+    console.log(ranNums);
+
+
+ var images = [];
+  ranNums.forEach((elem)=>{
+      console.log(elem)
+      images.push("img/t" + elem + ".png");
+  });
+  console.log(images);
+
+    for ( i= 0 ;i<4 ; i ++ ){
+        console.log(arr[i]);
+        $(arr[i]).attr("src",images[i]);
+    }
+
+  function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+  }
+</script>
+      <script>
+
+var glide = new Glide('.glide', {
+  type: 'carousel',
+  perView: 3,
+  autoplay: 1801,
+  hoverpause:true,
+  animationDuration:1800,
+  animationTimingFunc:'linear'
+})
+
+
+
+glide.mount()
+      </script>
+      
+
+
+</body>
+</html>

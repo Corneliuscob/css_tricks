@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Glide Js </title>
+    
+    <link rel="stylesheet" href="glide-3.3.0/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" href="glide-3.3.0/dist/css/glide.core.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.10.0/math.js"></script>
+    <script src="./flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="./flickity.css" media="screen">
+
+    <style>
+
+      .test{
+        max-width:200px;
+      }
+    </style>
+</head>
+
+<body>
+<!--     
+<div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+  <div class="carousel-cell"><img id = "r1" class = "test" src="img/t1.png"></div>
+  <div class="carousel-cell"><img id = "r2" class = "test"  src="img/t2.png"></div>
+  <div class="carousel-cell"><img id = "r4" class = "test"  src="img/t4.png"></div>
+  
+</div> -->
+<!-- this works with no images -->
+
+
+    <div class="main-carousel">
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        
+      </div>
+
+
+
+
+
+    <!-- <script >
+    const arr = ["#r1","#r2","#r3","#r4"];
+    var ranNums = [1,2,3,4,5,6];
+    for ( i= 0 ;i<2 ; i ++ ){
+        var index = getRandomInt(ranNums.length);
+        ranNums.splice(index,1);
+    }
+    console.log(ranNums);
+
+
+ var images = [];
+  ranNums.forEach((elem)=>{
+      console.log(elem)
+      images.push("img/t" + elem + ".png");
+  });
+  console.log(images);
+
+    for ( i= 0 ;i<4 ; i ++ ){
+        console.log(arr[i]);
+        $(arr[i]).attr("src",images[i]);
+    }
+
+  function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+  }
+</script> -->
+
+      <script>
+      
+        $('.main-carousel').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true
+        });
+      </script>
+
+
+</body>
+</html>

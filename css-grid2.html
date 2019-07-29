@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSSgrid 2 
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+
+    <style>
+            .grid{
+            display:grid;
+            /* can aslo use fractions to set the grid  */
+            grid-template-columns: 1fr 2fr 1fr;
+            /* grid-column-gap: 1em;
+            grid-row-gap:1em; */
+            /* grid gap works too  */
+            grid-gap:1em;
+            /* sets all height of boxes to 100  text will overflow*/
+            /* grid-auto-rows:100px; */
+
+            grid-auto-rows:minmax(100px,auto);
+
+        }
+
+        .grid  > div { 
+            background: #eee;
+            padding: 1em;
+        }
+        .grid > div:nth-child(odd){
+            background: #ddd;
+        }
+        .nested {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; 
+            grid-auto-rows: 70px;
+        } 
+        .nested > div{
+            border: #333 1px solid;
+            padding: 1em;
+        }
+    </style>    
+</head>
+<body>
+    
+    <div class="grid">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nobis necessitatibus eos saepe ipsa velit! Numquam ex, debitis quidem corrupti magnam at earum possimus asperiores incidunt quasi quae, esse vero. </div>
+        <div>HOla   </div>
+        <div>Hi Hi </div>
+        <div>HOla   </div>
+        <div class="nested"> 
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est accusamus deleniti cum laboriosam vel? Doloribus perspiciatis vero perferendis, quisquam corrupti in reiciendis. Dicta optio non consequatur numquam ipsam temporibus nesciunt!</div>
+        </div>
+        <div>HOla   </div>
+        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum facilis autem laboriosam in, voluptas a corrupti dignissimos soluta! Similique quasi hic, labore excepturi sunt perferendis sequi velit. A, vero exercitationem? </div>
+        <div>HOla   </div>
+        <div>Hi Hi </div>
+        <div>HOla   </div>
+    </div>
+</body>
+</html>
